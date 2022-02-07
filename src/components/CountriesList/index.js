@@ -14,8 +14,10 @@ function CountriesList(props) {
             {countries.map((country) => {
                 return (
                     <div>
-                        <img src="" />
-                        <Link to={`/countries/${country.name}`}> {country.name} </Link>
+                        <ul>
+                            <img src={`${country.alpha2Code}`} alt="country" />
+                            <Link to={`/${country.alpha3Code}`}> {country.name} </Link>
+                        </ul>
                     </div>
                 )
             })}

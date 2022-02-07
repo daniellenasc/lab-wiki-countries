@@ -1,7 +1,8 @@
 import './App.css';
 import { BrowserRouter, Route, Routes, Navigate } from "react-router-dom";
-import coutriesData from "../../countries.json"
+import coutriesData from "./countries.json"
 import { Navbar } from './components/Navbar';
+import CountriesList from './components/CountriesList';
 
 
 function App() {
@@ -9,12 +10,22 @@ function App() {
 
     <div className="App">
       <Navbar />
-    
       <BrowserRouter>
-        <Routes>        
-        </Routes>
+        <Routes>
+      
+          <div className="container">        
+        
+            <div className="row">
+          
+              <Route path="/" element={ <CountriesList country={coutriesData} /> } />
+          
+             </div>
+           </div>
+          </Routes>
       </BrowserRouter>
       
+
+
     </div>
   );
 }
